@@ -1,0 +1,4 @@
+hikari
+hikari-lightbulb
+git+https://github.com/MahdiAw/hackernews-python@master
+tortoise-orm
