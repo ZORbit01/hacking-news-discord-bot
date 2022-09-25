@@ -18,7 +18,7 @@ set_channel.add_checks(
 @lightbulb.option("channel", "channel where message to be sent", hikari.TextableChannel)
 @lightbulb.option("image_url", "image to be sent", str, required=False, default=None)
 @lightbulb.app_command_permissions(hikari.Permissions.ADMINISTRATOR, dm_enabled=False)
-@lightbulb.command("setchannel", "set news channel", auto_defer=True, pass_options=True)
+@lightbulb.command("setchannel", "set news channel", auto_defer=True,pass_options=True)
 @lightbulb.implements(lightbulb.SlashCommand)
 async def set_channels(
     ctx: lightbulb.Context, channel: hikari.channels.GuildTextChannel, image_url: str
@@ -26,7 +26,6 @@ async def set_channels(
     server_id = ctx.get_guild().id
     user_id = ctx.author.id
     channel_id = int(channel)
-    print(int(channel))
     sub = Subscription(
         server_id=server_id,
         user_setter_id=user_id,
@@ -39,7 +38,7 @@ async def set_channels(
         subs.image_url = image_url
         subs.user_setter_id = user_id
         await subs.save()
-
+        
     else:
         subs = Subscription(
             server_id=server_id,

@@ -18,7 +18,7 @@ unset_channel.add_checks(
 
 @unset_channel.command()
 @lightbulb.app_command_permissions(hikari.Permissions.ADMINISTRATOR, dm_enabled=False)
-@lightbulb.command("unset", "unset news channel", auto_defer=True, pass_options=True)
+@lightbulb.command("unset", "unset news channel",auto_defer=True,pass_options=True)
 @lightbulb.implements(lightbulb.SlashCommand)
 async def unset_channels(ctx: lightbulb.Context):
     server_id = ctx.get_guild().id
